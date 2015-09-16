@@ -98,7 +98,7 @@ class PostgresIndexStore(IndexStore, PostgresStore):
         # write directly to db, as sort comes as CLUSTER later
         table = self._generate_tableName(session, index)
         query = ("INSERT INTO {0} (term, occurences, recordId) "
-                 "VALUES (%s, %s, %s)".format(table) % (table, record)
+                 "VALUES (%s, %s, %s)".format(table)
                  )
 
         for t in termhash.values():
